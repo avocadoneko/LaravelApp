@@ -17,9 +17,13 @@ class Person extends Model {
     );
 
     public function getData() {
-        return $this->id . ':' . $this->name . '(' . $this->age . ')';
+        return $this->id . ': ' . $this->name . ' (' . $this->age . ')';
     }
 
     public $timestamps = false;
+
+    public function boards() {
+        return $this->hasMany('App\Board');
+    }
 
 }
