@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Restdata;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
@@ -76,6 +77,10 @@ class HelloController extends Controller {
       ->limit(3)
       ->get();
       return view('hello.show', ['items' => $items]);
+    }
+
+    public function rest(Request $request) {
+        return view('hello.rest');
     }
 
 }
