@@ -9,6 +9,11 @@
 @endsection
 
 @section('content')
+  @if (Auth::check())
+    <p>USER: {{$user->name . '(' . $user->email . ')'}}</p>
+   @else
+    <p>Not Login(<a href="/login">LOGIN</a><a href="/register">REGISTER</a></p>
+   @endif
 <table>
   <tr>
     <th><a href="/hello?sort=name">name</a></th>
